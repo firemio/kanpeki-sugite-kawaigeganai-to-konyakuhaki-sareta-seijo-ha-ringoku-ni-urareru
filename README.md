@@ -1,6 +1,6 @@
-# ゴリラの神から加護された令嬢は王立騎士団で可愛がられる - タイトルジェネレーター
+# 完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる - タイトルジェネレーター
 
-[デモページはこちら](https://firemio.github.io/gorilla-no-kami-kara-kago-sareta-reijou-ha-ouritsukishidan-de-kawaigarareru/)
+<!-- [デモページはこちら](https://...) --> <!-- TODO: デモページのURLを更新 -->
 
 ## MCP化・SSEによる外部制御について
 
@@ -37,7 +37,7 @@
   ```sh
   curl -X POST "https://your-mcp-worker.<サブドメイン>.workers.dev/send" \
     -H "Content-Type: application/json" \
-    -d '{"action":"set","target":"animal","value":"カバ"}'
+    -d '{"action":"set","target":"type01","value":"至高"}' # target を typeXX 形式に変更
   ```
 
 - 送信例コマンドは `index.html` のMCPハンドラで拡張可能です
@@ -46,8 +46,8 @@
 
 ### 参考：MCPコマンド例（アプリ固有操作対応）
 
-- テキスト変更: `{ "action": "set", "target": "animal", "value": "カバ" }`
-- スタイル変更: `{ "action": "style", "target": "result", "css": { "color": "red" } }`
+- テキスト変更: `{ "action": "set", "target": "type01", "value": "至高" }`
+- スタイル変更: `{ "action": "style", "target": ".result", "css": { "color": "red" } }` # スタイル変更のターゲットはセレクタ指定可能
 - ランダムタイトル生成: `{ "action": "generate" }`
 - 履歴クリア: `{ "action": "clearHistory" }`
 
@@ -62,4 +62,4 @@
 - 本サンプルはメモリ上でクライアント管理しています。大規模用途はDurable Objects等の利用を検討してください
 
 ## 概要
-異世界ファンタジー風のランダムタイトルを生成するシンプルなWebアプリです。
+「完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる」風のランダムタイトルを生成するシンプルなWebアプリです。
