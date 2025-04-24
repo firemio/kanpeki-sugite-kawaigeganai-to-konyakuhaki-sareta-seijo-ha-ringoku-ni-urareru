@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる - タイトルジェネレーター</title>
+    <style>
+        body {
+            font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            font-size: 24px;
+            color: #8B4513; /* 少し調整が必要かも */
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            border: 2px solid #E6CCB2; /* 色調整 */
+            border-radius: 8px;
+            background-color: #FFF8E1; /* 色調整 */
+            text-align: center;
+            min-height: 50px;
+            line-height: 1.5;
+        }
+        /* 新しいタイプに対応するスタイルを追加 */
+        .type01 { /* 完璧 */
+            color: #FFD700; /* 金色 */
+            font-weight: bold;
+        }
+        .type02 { /* 可愛げ */
+            color: #FF69B4; /* ピンク */
+            font-weight: bold;
+        }
+        .type03 { /* 婚約破棄 */
+            color: #DC143C; /* 深紅 */
+            font-weight: bold;
+        }
+        .type04 { /* 聖女 */
+            color: #ADD8E6; /* 水色 */
+            font-weight: bold;
+        }
+        .type05 { /* 隣国 */
+            color: #90EE90; /* 明るい緑 */
+            font-weight: bold;
+        }
+        .type06 { /* 売ら */
+            color: #A9A9A9; /* 灰色 */
+            font-weight: bold;
+        }
+        button {
+            background-color: #8B4513; /* 色調整 */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #A0522D; /* 色調整 */
+        }
+        .history {
+            margin-top: 30px;
+        }
+        .history-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .history-item {
+            padding: 8px;
+            border-bottom: 1px dashed #eee;
+        }
+        .history-item:hover {
+            background-color: #f9f9f9;
+        }
+        .legend {
+            margin-top: 20px;
+            font-size: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- MCP簡易情報表示 -->
+    <div id="mcp-info" style="font-size:12px; color:#555; background:#f6f6f6; padding:6px 12px; border-radius:6px; margin-bottom:10px;">
+        <b>MCP状態:</b> <span id="mcp-status">未接続</span> ／ <b>接続先:</b> <span id="mcp-url"></span> ／ <b>最終コマンド:</b> <span id="mcp-lastcmd">-</span>
+    </div>
+    <h1>完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる</h1>
+    <h2>完璧聖女GEN</h2> <!-- タイトルに合わせて簡略化 -->
+
+    <div class="container">
+        <p>異世界ファンタジー風のランダムタイトルジェネレーター</p>
+
+        <div class="result" id="result">
+            <span class="type01">完璧</span>すぎて<span class="type02">可愛げ</span>がないと<span class="type03">婚約破棄</span>された<span class="type04">聖女</span>は<span class="type05">隣国</span>に<span class="type06">売ら</span>れる
+        </div>
+
+        <button onclick="generateTitle()">新しいタイトルを生成</button>
+
+        <div class="legend">
+            <span class="legend-item"><span class="type01">■</span> type01 (完璧)</span>
+            <span class="legend-item"><span class="type02">■</span> type02 (可愛げ)</span>
+            <span class="legend-item"><span class="type03">■</span> type03 (婚約破棄)</span>
+            <span class="legend-item"><span class="type04">■</span> type04 (聖女)</span>
+            <span class="legend-item"><span class="type05">■</span> type05 (隣国)</span>
+            <span class="legend-item"><span class="type06">■</span> type06 (売ら)</span>
+        </div>
+
+        <div class="history">
+            <div class="history-title">履歴</div>
+            <div id="history-container"></div>
+        </div>
+
+        <!-- 追加: 最頻単語集計ボタンと結果表示欄 -->
+        <div style="margin-top:30px;">
+            <button onclick="showMostFrequentWords()">100回実行して最頻単語を表示</button>
+            <div id="most-frequent-result" style="margin-top:10px; font-size:14px; background:#f4f8ff; padding:10px; border-radius:6px;"></div>
+        </div>
+    </div>
+
+    <script>
+        // 単語リスト (新しいタイプに合わせて更新)
+        const words = {
+            type01: ["完璧", "有能", "最強", "万能", "理想", "最高", "絶世", "天才", "至高", "完全無欠", "規格外", "圧倒的", "神がかり", "超絶", "エリート"],
+            type02: ["可愛げ", "愛嬌", "隙", "弱点", "人間味", "天然", "ドジ", "ポンコツ", "不器用さ", "おっちょこちょい", "甘え", "わがまま", "素直さ", "照れ", "涙もろさ"],
+            type03: ["婚約破棄され", "追放され", "捨てられ", "解雇され", "勘当され", "裏切られ", "見限られ", "絶縁され", "左遷され", "冤罪で処刑され", "濡れ衣を着せられ", "騙され", "利用され", "切り捨てられ", "除名され"],
+            type04: ["聖女", "王女", "公爵令嬢", "賢者", "巫女", "女神官", "薬師", "錬金術師", "精霊使い", "召喚士", "騎士", "魔導師", "村娘", "侍女", "踊り子"],
+            type05: ["隣国", "敵国", "帝国", "辺境", "魔界", "神殿", "ギルド", "傭兵団", "奴隷市場", "闇組織", "田舎", "修道院", "竜の国", "獣人の国", "エルフの里"],
+            type06: ["売ら", "拾わ", "雇わ", "スカウトさ", "召喚さ", "保護さ", "弟子入りさ", "嫁が", "引き取ら", "見初めら", "誘拐さ", "養女にな", "契約さ", "助けら", "匿わ"]
+        };
+
+        // ランダムな要素を取得する関数
+        function getRandomElement(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        // メモリ内の履歴配列
+        let titleHistory = [];
+
+        // 履歴表示更新関数
+        function updateHistoryDisplay() {
+            const historyContainer = document.getElementById('history-container');
+            historyContainer.innerHTML = '';
+
+            titleHistory.forEach(title => {
+                const div = document.createElement('div');
+                div.className = 'history-item';
+                div.innerHTML = title;
+                div.addEventListener('click', function() {
+                    document.getElementById('result').innerHTML = title;
+                });
+                historyContainer.appendChild(div);
+            });
+        }
+
+        // タイトル生成関数 (新しいタイプに合わせて更新)
+        function generateTitle() {
+            // 「（type01）すぎて（type02）がないと（type03）された（type04）は（type05）に（type06）れる」形式
+            const type01Word = getRandomElement(words.type01);
+            const type02Word = getRandomElement(words.type02);
+            const type03Word = getRandomElement(words.type03);
+            const type04Word = getRandomElement(words.type04);
+            const type05Word = getRandomElement(words.type05);
+            const type06Word = getRandomElement(words.type06);
+
+            const title = `<span class="type01">${type01Word}</span>すぎて<span class="type02">${type02Word}</span>がないと<span class="type03">${type03Word}</span>た<span class="type04">${type04Word}</span>は<span class="type05">${type05Word}</span>に<span class="type06">${type06Word}</span>れる`;
+
+            // 結果を表示
+            document.getElementById('result').innerHTML = title;
+
+            // 履歴に追加
+            titleHistory.unshift(title);
+            if (titleHistory.length > 10) {
+                titleHistory.pop();
+            }
+
+            // 履歴表示を更新
+            updateHistoryDisplay();
+        }
+    // === 最頻単語集計機能 (新しいタイプに合わせて更新) ===
+    function showMostFrequentWords() {
+        // 出現回数カウント用オブジェクト
+        const counters = {
+            type01: {}, type02: {}, type03: {}, type04: {}, type05: {}, type06: {}
+        };
+        for (let i = 0; i < 100; i++) {
+            const type01Word = getRandomElement(words.type01);
+            const type02Word = getRandomElement(words.type02);
+            const type03Word = getRandomElement(words.type03);
+            const type04Word = getRandomElement(words.type04);
+            const type05Word = getRandomElement(words.type05);
+            const type06Word = getRandomElement(words.type06);
+            counters.type01[type01Word] = (counters.type01[type01Word] || 0) + 1;
+            counters.type02[type02Word] = (counters.type02[type02Word] || 0) + 1;
+            counters.type03[type03Word] = (counters.type03[type03Word] || 0) + 1;
+            counters.type04[type04Word] = (counters.type04[type04Word] || 0) + 1;
+            counters.type05[type05Word] = (counters.type05[type05Word] || 0) + 1;
+            counters.type06[type06Word] = (counters.type06[type06Word] || 0) + 1;
+        }
+        function getMostFrequent(counter) {
+            const max = Math.max(...Object.values(counter));
+            // 0回の場合は空配列を返す (単語リストが空の場合などに対応)
+            if (max === -Infinity) return [];
+            return Object.keys(counter).filter(key => counter[key] === max);
+        }
+        const mostFrequentWords = {
+            type01: getMostFrequent(counters.type01),
+            type02: getMostFrequent(counters.type02),
+            type03: getMostFrequent(counters.type03),
+            type04: getMostFrequent(counters.type04),
+            type05: getMostFrequent(counters.type05),
+            type06: getMostFrequent(counters.type06)
+        };
+        // 結果を整形して表示
+        let html = '<b>カテゴリごとの最頻単語（100回ランダム）</b><br><ul style="margin:0; padding-left:1.2em;">';
+        for (const key in mostFrequentWords) {
+            // タイプ名に対応する凡例のスタイルクラスを取得
+            const className = key; // type01, type02 など
+            // 最頻単語がない場合は表示しない
+            if (mostFrequentWords[key].length > 0) {
+                 html += `<li><b><span class="${className}">■</span> ${key}</b>: ${mostFrequentWords[key].map(w=>`<span style='font-weight:bold;'>${w}</span>`).join(', ')}</li>`;
+            } else {
+                 html += `<li><b><span class="${className}">■</span> ${key}</b>: (データなし)</li>`;
+            }
+        }
+        html += '</ul>';
+        document.getElementById('most-frequent-result').innerHTML = html;
+    }
+
+    // === MCP (SSE) クライアント ===
+    // サーバー例: http://localhost:5000/sse
+    const sseUrl = "http://localhost:5000/sse"; // 必要に応じて書き換え
+    const eventSource = new EventSource(sseUrl);
+    // MCP情報表示の初期化
+    document.getElementById('mcp-url').textContent = sseUrl;
+    document.getElementById('mcp-status').textContent = '接続中';
+
+    eventSource.onopen = function() {
+        document.getElementById('mcp-status').textContent = '接続中';
+    };
+    eventSource.onerror = function() {
+        document.getElementById('mcp-status').textContent = '切断/エラー';
+    };
+    eventSource.onmessage = function(event) {
+        try {
+            const cmd = JSON.parse(event.data);
+            document.getElementById('mcp-lastcmd').textContent = event.data;
+            handleMcpCommand(cmd);
+        } catch (e) {
+            console.error("MCPコマンドのパース失敗", e, event.data);
+        }
+    };
+
+    /**
+     * MCPコマンドハンドラ (新しいタイプに合わせて調整が必要な場合がある)
+     * 例:
+     *   { action: "set", target: "type01", value: "至高" } → .type01のテキスト変更
+     *   { action: "style", target: "result", css: { color: "red" } } → .resultのスタイル変更
+     *   { action: "generate" } → generateTitle()実行
+     *   { action: "clearHistory" } → 履歴をクリア
+     */
+    function handleMcpCommand(cmd) {
+        // テキスト変更 (ターゲットを typeXX に合わせる)
+        if (cmd.action === "set" && cmd.target && cmd.target.startsWith("type")) {
+             const el = document.querySelector(`.${cmd.target}`);
+             if (el) el.textContent = cmd.value;
+        }
+        // スタイル変更
+        else if (cmd.action === "style" && cmd.target) { // target の検証を緩める
+            const el = document.querySelector(cmd.target.startsWith('.') ? cmd.target : `.${cmd.target}`); // クラスセレクタを仮定
+            if (el && cmd.css) {
+                Object.entries(cmd.css).forEach(([k, v]) => { el.style[k] = v; });
+            }
+        }
+        // ランダムタイトル生成
+        else if (cmd.action === "generate") {
+            generateTitle();
+        }
+        // 履歴クリア
+        else if (cmd.action === "clearHistory") {
+            titleHistory = [];
+            updateHistoryDisplay();
+        }
+        // 他のアクションもここに追加できます
+    }
+
+    // 初期タイトル生成
+    // generateTitle(); // 初回ロード時にランダム生成する場合はコメント解除
+
+    </script>
+</body>
+</html>
